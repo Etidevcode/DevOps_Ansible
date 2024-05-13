@@ -1,0 +1,18 @@
+ubuntu@control:~/vprofile$ ls
+exercise1  exercise2  exercise3  exercise4  exercise5  exercise6  exercise7
+ubuntu@control:~/vprofile$ cp -r exercise7 exercise8
+ubuntu@control:~/vprofile$ cd exercise8/
+ubuntu@control:~/vprofile/exercise8$ ls
+ansible.cfg  clientkey.pem  db.yaml  inventory
+
+ubuntu@control:~/vprofile/exercise8$ vim db.yaml
+ubuntu@control:~/vprofile/exercise8$ ansible-playbook db.yaml
+
+ubuntu@control:~/vprofile/exercise8$ ansible-playbook db.yaml -vv
+
+ubuntu@control:~/vprofile/exercise8$ vim db.yaml
+ubuntu@control:~/vprofile/exercise8$ ansible-playbook db.yaml
+
+ubuntu@control:~/vprofile/exercise8$ vim db.yaml
+ubuntu@control:~/vprofile/exercise8$ ansible-playbook db.yaml
+

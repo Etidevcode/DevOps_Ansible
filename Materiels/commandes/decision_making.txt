@@ -1,0 +1,47 @@
+ubuntu@control:~/vprofile/exercise9$ ls
+
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook vars_precedence.yaml      
+
+ubuntu@control:~/vprofile/exercise9$ vim vars_precedence.yaml                   
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook vars_precedence.yaml
+
+ubuntu@control:~/vprofile/exercise9$ ansible -m setup web01
+
+ubuntu@control:~/vprofile/exercise9$ vim print_facts.yaml
+ubuntu@control:~/vprofile/exercise9$ cat print_facts.yaml
+
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook print_facts.yaml
+
+
+ubuntu@control:~/vprofile/exercise9$ vim print_facts.yaml
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook print_facts.yaml
+
+
+ubuntu@control:~/vprofile/exercise9$ vim print_facts.yaml
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook print_facts.yaml
+
+
+ubuntu@control:~/vprofile/exercise9$ vim inventory
+ubuntu@control:~/vprofile/exercise9$ ansible -m ping all
+
+ubuntu@control:~/vprofile/exercise9$ vim inventory
+ubuntu@control:~/vprofile/exercise9$ ansible -m ping all
+
+ubuntu@control:~/vprofile/exercise9$ vim inventory
+ubuntu@control:~/vprofile/exercise9$ ansible -m ping all
+
+ubuntu@control:~/vprofile/exercise9$ ls
+
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook print_facts.yaml
+
+ubuntu@control:~/vprofile/exercise9$ ansible -m setup web01
+
+ubuntu@control:~/vprofile/exercise9$ vim print_facts.yaml
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook print_facts.yaml
+
+
+
+ubuntu@control:~/vprofile/exercise9$ ansible -m setup web01
+
+ubuntu@control:~/vprofile/exercise9$ vim print_facts.yaml
+ubuntu@control:~/vprofile/exercise9$ ansible-playbook print_facts.yaml

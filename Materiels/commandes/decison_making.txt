@@ -1,0 +1,17 @@
+ubuntu@control:~/vprofile$ ls
+exercise1  exercise3  exercise5  exercise7  exercise9
+exercise2  exercise4  exercise6  exercise8
+ubuntu@control:~/vprofile$ cp -r exercise9 exercise10
+ubuntu@control:~/vprofile$ cd exercise10/
+ubuntu@control:~/vprofile/exercise10$ rm -rf print_facts.yaml vars_precedence.yaml
+ubuntu@control:~/vprofile/exercise10$ ls
+ansible.cfg  clientkey.pem  group_vars  host_vars  inventory
+ubuntu@control:~/vprofile/exercise10$ ansible -m ping all
+
+ubuntu@control:~/vprofile/exercise10$ vim provisionning.yaml
+ubuntu@control:~/vprofile/exercise10$ ansible-playbook provisionning.yaml --syntax-check
+
+ubuntu@control:~/vprofile/exercise10$ ansible-playbook provisionning.yaml -C
+
+
+ubuntu@control:~/vprofile/exercise10$ ansible-playbook provisionning.yaml

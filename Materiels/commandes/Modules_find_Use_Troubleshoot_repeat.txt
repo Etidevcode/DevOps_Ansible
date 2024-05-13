@@ -1,0 +1,74 @@
+ubuntu@ip-172-31-33-34:~$ ls
+ubuntu@ip-172-31-33-34:~$ cd vprofile/
+ubuntu@ip-172-31-33-34:~/vprofile$ ls
+ubuntu@ip-172-31-33-34:~/vprofile$ cp -r exercise5 exercise6
+ubuntu@ip-172-31-33-34:~/vprofile$ cd exercise6/
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ ls
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ mv web-db.yaml web.yaml
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ ls
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ vim web.yaml
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ mkdir files
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ vim files/index.html
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ vim web.yaml
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ ansible-playbook -i inventory web.yaml --syntax-check
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ ansible-playbook -i inventory web.yaml -C
+
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ ansible-playbook -i inventory web.yaml
+ 
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ cat inventory
+
+
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ ssh -i clientkey.pem ec2-user@172.31.43.52
+[ec2-user@ip-172-31-43-52 ~]$ sudo -i
+[root@ip-172-31-43-52 ~]# cd /var/www/html/
+[root@ip-172-31-43-52 html]# ls
+[root@ip-172-31-43-52 html]# cat index.html
+[root@ip-172-31-43-52 html]# cat index.html.19682.2024-05-10\@13\:43\:35~
+[root@ip-172-31-43-52 html]# exit
+[ec2-user@ip-172-31-43-52 ~]$ exit
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ sudo vim /etc/hostname
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ sudo hostname control
+ubuntu@ip-172-31-33-34:~/vprofile/exercise6$ logout
+
+$ ssh -i Downloads/control.pem ubuntu@54.161.42.67
+
+ubuntu@control:~$ ls
+ubuntu@control:~$ cd vprofile/
+ubuntu@control:~/vprofile$ ls
+ubuntu@control:~/vprofile$ cp -r exercise5 exercise7
+ubuntu@control:~/vprofile$ cd exercise7/
+ubuntu@control:~/vprofile/exercise7$ ls
+ubuntu@control:~/vprofile/exercise7$ mv web-db.yaml db.yaml
+ubuntu@control:~/vprofile/exercise7$ ls
+
+ubuntu@control:~/vprofile/exercise7$ vim db.yaml
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook -i inventory db.yaml --syntyax-check
+
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook -i inventory db.yaml --syntax-check
+
+
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook -i inventory db.yaml
+
+
+ubuntu@control:~/vprofile/exercise7$ cat inventory
+
+
+ubuntu@control:~/vprofile/exercise7$ ssh -i clientkey.pem ec2-user@172.31.44.159
+[ec2-user@ip-172-31-44-159 ~]$ sudo -i
+[root@ip-172-31-44-159 ~]# yum search python | grep -i mysql
+Last metadata expiration check: 2:59:59 ago on Fri 10 May 2024 10:58:28 AM UTC.
+[root@ip-172-31-44-159 ~]# exit
+[ec2-user@ip-172-31-44-159 ~]$ exit
+
+ubuntu@control:~/vprofile/exercise7$ vim db.yaml
+ubuntu@control:~/vprofile/exercise7$ ansible-galaxy collection install community.mysql --force
+
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook -i inventory db.yaml
+
+ubuntu@control:~/vprofile/exercise7$ vim db.yaml
+ubuntu@control:~/vprofile/exercise7$ vim db.yaml
+ubuntu@control:~/vprofile/exercise7$ cat db.yaml
+
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook -i inventory db.yaml
+
+

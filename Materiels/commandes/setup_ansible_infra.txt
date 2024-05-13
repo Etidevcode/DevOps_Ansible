@@ -1,0 +1,30 @@
+$ ssh -i Downloads/control.pem ubuntu@54.161.42.67
+
+ubuntu@ip-172-31-33-34:~$ exit
+
+$ ls ~/.ssh/known_hosts
+
+$ cat ~/.ssh/known_hosts
+
+$ cat /dev/null > ~/.ssh/known_hosts
+
+$ cat ~/.ssh/known_hosts
+
+$ ssh -i Downloads/control.pem ubuntu@54.161.42.67
+
+
+ubuntu@ip-172-31-33-34:~$ exit
+
+$ cat ~/.ssh/known_hosts
+
+$ ssh -i Downloads/control.pem ubuntu@54.161.42.67
+
+ubuntu@ip-172-31-33-34:~$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+
+ubuntu@ip-172-31-33-34:~$ sudo apt install ansible
+
+ubuntu@ip-172-31-33-34:~$ ansible --version
+
+
+
+

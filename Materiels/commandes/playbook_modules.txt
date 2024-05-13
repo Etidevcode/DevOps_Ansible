@@ -1,0 +1,80 @@
+ubuntu@ip-172-31-33-19:~/vprofile$ ls
+ubuntu@ip-172-31-33-19:~/vprofile$ cp -r exercise4 exercise5
+ubuntu@ip-172-31-33-19:~/vprofile$ cd exercise5/
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ls
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ rm -rf index.html
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ls
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ vim web-db.yaml
+
+=======================================================================
+---
+- name: Webserver setup
+  hosts: webservers
+  become: yes
+  tasks:
+   - name: Install httpd
+     ansible.builtin.yum:
+      name: httpd
+      state: present
+
+   - name: Start service
+     ansible.builtin.service:
+       name: httpd
+       state: started
+       enabled: yes
+
+- name: DBserver setup
+  hosts: dbservers
+  become: yes
+  tasks:
+   - name: Install mariadb-server
+     ansible.builtin.yum:
+      name : mariadb-server
+      state: present
+=======================================================================
+
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible webservers -m yum -a "name=httpd state=absent" -i inventory --become
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml
+
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ vim web-db.yaml
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml
+
+=============================================================================
+---
+- name: Webserver setup
+  hosts: webservers
+  become: yes
+  tasks:
+   - name: Install httpd
+     ansible.builtin.yum:
+      name: httpd
+      state: present
+
+   - name: Start service
+     ansible.builtin.service:
+       name: httpd
+       state: started
+       enabled: yes
+
+- name: DBserver setup
+  hosts: dbservers
+  become: yes
+  tasks:
+   - name: Install mariadb-server
+     ansible.builtin.yum:
+      name : mariadb-server
+      state: present
+
+   - name: Start mariadb service
+     ansible.builtin.service:
+      name: mariadb
+      state: started
+      enabled: yes
+==========================================================================
+
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml -v
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml -vv
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml -vvv
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml -vvvv
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml --syntax-check
+ubuntu@ip-172-31-33-19:~/vprofile/exercise5$ ansible-playbook -i inventory web-db.yaml -C

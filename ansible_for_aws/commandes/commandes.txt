@@ -1,0 +1,21 @@
+$ ssh -i Downloads/control.pem ubuntu@54.161.42.67
+
+ubuntu@control:~$ export AWS_ACCESS_KEY_ID='******'
+ubuntu@control:~$ export AWS_SECRET_ACCESS_KEY='****'
+ubuntu@control:~$ vim .bashrc
+ubuntu@control:~$ vim .bashrc
+ubuntu@control:~$ source .bashrc
+ubuntu@control:~$ mkdir aws
+ubuntu@control:~$ cd aws/
+ubuntu@control:~/aws$ vim test-aws.yml
+ubuntu@control:~/aws$ cat test-aws.yml
+
+ubuntu@control:~/aws$ sudo apt install python3-pip -y
+ubuntu@control:~/aws$ pip install boto3
+ubuntu@control:~/aws$ vim test-aws.yml
+
+
+
+
+ubuntu@control:~/aws$ ansible-playbook test-aws.yml
+ubuntu@control:~/aws$ ansible-galaxy collection install amazon.aws

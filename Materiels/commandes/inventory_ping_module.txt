@@ -1,0 +1,29 @@
+$ cat Downloads/client-key.pem
+
+
+$ ssh -i Downloads/control.pem ubuntu@54.161.42.67
+
+ubuntu@ip-172-31-33-34:~$ cd vprofile/exercise1/
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ ls
+
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ cat inventory
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ vim clientkey.pem
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ ls -l
+
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ ansible web01 -m ping -i inventory
+
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ sudo cat /etc/ansible/ansible.cfg
+
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ sudo -i
+root@ip-172-31-33-34:~# cd /etc/ansible/
+root@ip-172-31-33-34:/etc/ansible# ls
+root@ip-172-31-33-34:/etc/ansible# mv ansible.cfg ansible.cfg_backup
+root@ip-172-31-33-34:/etc/ansible# ansible-config init --disabled -t all > ansible.cfg
+root@ip-172-31-33-34:/etc/ansible# ls
+root@ip-172-31-33-34:/etc/ansible# vim ansible.cfg
+root@ip-172-31-33-34:/etc/ansible# exit
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ pwd
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ ls
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ ansible web01 -m ping -i inventory
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ chmod 400 clientkey.pem
+ubuntu@ip-172-31-33-34:~/vprofile/exercise1$ ansible web01 -m ping -i inventory

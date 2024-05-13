@@ -1,0 +1,29 @@
+ubuntu@control:~/vprofile/exercise7$ cd
+ubuntu@control:~$ ls
+vprofile
+ubuntu@control:~$ cd vprofile/
+ubuntu@control:~/vprofile$ ls
+ubuntu@control:~/vprofile$ sudo -i
+root@control:~# vim /etc/ansible/ansible.cfg
+root@control:~# exit
+
+
+ubuntu@control:~/vprofile$ ls
+ubuntu@control:~/vprofile$ cd exercise7/
+ubuntu@control:~/vprofile/exercise7$ ls
+ubuntu@control:~/vprofile/exercise7$ vim ansible.cfg
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook db.yaml
+
+ubuntu@control:~/vprofile/exercise7$ sudo touch /var/log/ansible.log
+
+ubuntu@control:~/vprofile/exercise7$ sudo chown ubuntu:ubuntu /var/log/ansible.log
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook db.yaml                   
+
+
+ubuntu@control:~/vprofile/exercise7$ cat /var/log/ansible.log
+
+
+ubuntu@control:~/vprofile/exercise7$ ansible-playbook db.yaml -vv
+
+ubuntu@control:~/vprofile/exercise7$ cat /var/log/ansible.log
+

@@ -1,0 +1,14 @@
+ubuntu@control:~/vprofile$ ls
+exercise1   exercise11  exercise2  exercise4  exercise6  exercise8
+exercise10  exercise12  exercise3  exercise5  exercise7  exercise9
+ubuntu@control:~/vprofile$ cp -r exercise12 exercise13
+ubuntu@control:~/vprofile$ cd exercise13/
+ubuntu@control:~/vprofile/exercise13$ ls
+ansible.cfg    group_vars  inventory          templates
+clientkey.pem  host_vars   provisioning.yaml
+ubuntu@control:~/vprofile/exercise13$ vim provisioning.yaml
+ubuntu@control:~/vprofile/exercise13$ cat provisioning.yaml
+
+
+ubuntu@control:~/vprofile/exercise13$ vim provisioning.yaml
+ubuntu@control:~/vprofile/exercise13$ ansible-playbook provisioning.yaml

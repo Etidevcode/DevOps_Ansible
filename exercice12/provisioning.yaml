@@ -1,0 +1,55 @@
+- name: Provisioning servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install required packages
+      package:
+        name:
+          - "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - chrony
+        - wget
+        - git
+        - zip
+        - unzip
+      when: ansible_os_family == 'RedHat'
+
+    - name: Install required packages
+      package:
+        name:
+          - "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip
+      when: ansible_os_family == 'Debian'
+
+    - name: Start NTP service
+      service:
+        name: "{{ 'chrony' if ansible_os_family == 'RedHat' else 'ntp' }}"
+        state: started
+        enabled: yes
+
+    - name: Create banner file
+      copy:
+        content: '# This server is managed by ansible. No manual changes please.'
+        dest: /etc/motd
+
+    - name: Deploy NTP configuration
+      template:
+        src: "templates/{{ 'ntpconf_centos' if ansible_os_family == 'RedHat' else 'ntpconf_ubuntu' }}"
+        dest: "{{ '/etc/chrony.conf' if ansible_os_family == 'RedHat' else '/etc/ntp.conf' }}"
+        backup: yes
+
+    - name: Restart NTP service
+      service:
+        name: "{{ 'chrony' if ansible_os_family == 'RedHat' else 'ntp' }}"
+        state: restarted
+        enabled: yes
+
